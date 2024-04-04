@@ -45,4 +45,11 @@ public class TeacherService {
         teacherRepository.save(t);
 
     }
+     public Teacher getTeacher(Integer id){
+        Teacher t=teacherRepository.findTeacherById(id);
+        if (t==null){
+            throw new ApiException("id not");
+        }
+        return t;
+    }
 }
